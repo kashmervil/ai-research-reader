@@ -42,9 +42,13 @@ Articles are auto-discovered from `articles/` on page load.
 - **Markdown rendering** — full GFM via marked.js with syntax-highlighted code blocks (highlight.js, GitHub theme)
 - **Mermaid diagrams** — `mermaid` fenced blocks render as interactive SVGs
 - **Light / dark theme** — toggle with system preference detection, persisted across sessions
-- **Master-detail sidebar** — article list → collapsible TOC tree (h1–h4) with back navigation
+- **Master-detail sidebar** — article list with progress bars → collapsible TOC tree (h2–h4) with back navigation and "Open" button
 - **Scroll-spy** — TOC highlights current section, auto-expands ancestors
 - **Resizable sidebar** — drag handle, width persisted in localStorage
+- **Sidebar pin** — pinned keeps sidebar open; unpinned auto-closes when clicking content
+- **Article search** — search within article content, highlighted snippet results under TOC headings
+- **Auto-hiding header** — hides on scroll down, reveals on scroll up; shows article title only when h1 not visible
+- **Reading progress** — per-article scroll position saved and restored, progress bars in sidebar, percentage in header
 - **Evidence tags** — `[Std]`, `[Standard]`, `[Inference]`, `[Platform]`, `[Library]`, `[Vendor]` → colored badge pills
 - **Link preview chips** — external URLs become chips with site favicons
 - **Adaptive reading time** — estimates remaining time, learns your reading speed

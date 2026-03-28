@@ -43,7 +43,7 @@ prompts/
 - Vanilla JS (ES6+), no frameworks
 - Single JS entry: `lib/app.js`
 - CSS custom properties for theming (`data-theme` on `<html>`)
-- localStorage: theme, sidebar width, reading speed
+- localStorage: theme, sidebar width, reading speed, reading progress per article, sidebar pinned state
 
 ## Renderer features
 
@@ -55,8 +55,13 @@ The renderer auto-applies these when rendering markdown in `lib/app.js`:
 - **Link chips** — external URLs → preview chips with favicons
 - **Table styling** — headers, row hover, horizontal scroll
 - **Dark mode** — system preference detection, persisted in localStorage
-- **TOC** — collapsible tree from h1–h4, scroll-spy, master-detail sidebar navigation
+- **TOC** — collapsible tree from h2–h4 (h1 excluded to avoid duplication), scroll-spy, master-detail sidebar navigation with "Open" button
 - **Reading time** — adaptive estimate that learns reading speed
+- **Reading progress** — per-article scroll position stored in localStorage, progress bars in article list, percentage in header
+- **Auto-hiding header** — hides on scroll down, reveals on scroll up, always visible near page top
+- **Conditional header title** — shows filename-based title only when article h1 is scrolled out of view
+- **Sidebar pin** — pinned (default) keeps sidebar open; unpinned auto-closes on content click
+- **Article search** — search within article content from sidebar, results shown as highlighted snippets under TOC headings
 - **YAML front matter** — `---` blocks stripped before rendering
 
 When adding renderer features, update this list and the matching section in README.md.

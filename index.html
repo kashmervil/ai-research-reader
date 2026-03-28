@@ -30,12 +30,28 @@
 
 <div class="layout">
   <nav class="sidebar" id="sidebar">
+    <div class="sidebar-toolbar" id="sidebarToolbar">
+      <button class="toolbar-btn" id="searchToggle" aria-label="Search in article">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6.5" cy="6.5" r="4.5"/><line x1="10" y1="10" x2="13.5" y2="13.5"/>
+        </svg>
+      </button>
+      <div class="toolbar-spacer"></div>
+      <button class="toolbar-btn" id="pinToggle" aria-label="Pin sidebar">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5.5 1.5l4 4-2 2 1.5 4-3-3-3 3 .5-4.5-2-2z"/>
+        </svg>
+      </button>
+    </div>
     <div class="sidebar-panels" id="sidebarPanels">
       <div class="sidebar-screen" id="screenList">
         <div class="sidebar-header"><h2>Articles</h2></div>
         <ul class="article-list"></ul>
       </div>
       <div class="sidebar-screen" id="screenDetail">
+        <div class="sidebar-search-wrap" id="searchWrap" hidden>
+          <input type="text" class="sidebar-search" id="sidebarSearch" placeholder="Search in article…">
+        </div>
         <div class="sidebar-detail-header">
           <button class="sidebar-back" id="sidebarBack" aria-label="Back to articles">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -43,6 +59,7 @@
             </svg>
           </button>
           <span class="sidebar-detail-title" id="detailTitle"></span>
+          <button class="sidebar-open-btn" id="openArticle" aria-label="Scroll to article start">Open</button>
         </div>
         <div class="toc-section">
           <ul id="toc"></ul>
@@ -60,7 +77,7 @@
 <script src="lib/marked.min.js"></script>
 <script src="lib/highlight.min.js"></script>
 <script src="lib/mermaid.min.js"></script>
-<script src="lib/app.js?v=11"></script>
+<script src="lib/app.js?v=12"></script>
 
 </body>
 </html>
