@@ -1,0 +1,156 @@
+/*
+  Custom dark syntax theme — Catppuccin Mocha inspired
+  Rich IDE-level color differentiation on dark background (#1e1e2e)
+*/
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+.hljs {
+  color: #cdd6f4;
+  background: transparent;
+}
+
+/* Keywords: mauve/purple — if, else, return, class, val, fun, import */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-template-tag,
+.hljs-variable.language_ {
+  color: #cba6f7;
+  font-weight: 500;
+}
+
+/* Built-in types and language constants: blue */
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-id {
+  color: #89b4fa;
+}
+
+/* Literals: true, false, null — peach/orange */
+.hljs-literal,
+.hljs-number {
+  color: #fab387;
+}
+
+/* Strings: green */
+.hljs-string,
+.hljs-selector-class,
+.hljs-meta .hljs-string {
+  color: #a6e3a1;
+}
+
+/* Template strings and regex: pink */
+.hljs-template-variable,
+.hljs-regexp {
+  color: #f5c2e7;
+}
+
+/* Comments: muted overlay text */
+.hljs-comment,
+.hljs-quote {
+  color: #6c7086;
+  font-style: italic;
+}
+
+/* Function/method names: sky blue */
+.hljs-title,
+.hljs-title.function_ {
+  color: #89dceb;
+  font-weight: 500;
+}
+
+/* Class names: yellow */
+.hljs-title.class_,
+.hljs-title.class_.inherited__ {
+  color: #f9e2af;
+  font-weight: 500;
+}
+
+/* Variables and params: light text */
+.hljs-variable,
+.hljs-params {
+  color: #cdd6f4;
+}
+
+/* Properties and attributes: lavender */
+.hljs-attr,
+.hljs-attribute {
+  color: #b4befe;
+}
+
+.hljs-property {
+  color: #89b4fa;
+}
+
+/* Symbols, bullets: pink */
+.hljs-symbol,
+.hljs-bullet {
+  color: #f5c2e7;
+}
+
+/* Operators: teal */
+.hljs-operator {
+  color: #94e2d5;
+}
+
+/* XML/HTML tags: mauve */
+.hljs-tag,
+.hljs-name {
+  color: #cba6f7;
+}
+
+/* Meta / preprocessor: teal */
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-doctag {
+  color: #94e2d5;
+}
+
+/* Section headers in configs */
+.hljs-section {
+  color: #89dceb;
+  font-weight: 600;
+}
+
+/* Deletion: red */
+.hljs-deletion {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.1);
+}
+
+/* Addition: green */
+.hljs-addition {
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.1);
+}
+
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 700; }
+
+.hljs-link {
+  color: #89b4fa;
+  text-decoration: underline;
+}
+
+.hljs-subst { color: #cdd6f4; }
+
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #94e2d5;
+}
+
+.hljs-formula {
+  color: #94e2d5;
+}
+
+.hljs-code {
+  color: #a6adc8;
+}
