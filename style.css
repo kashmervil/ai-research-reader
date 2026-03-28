@@ -368,6 +368,13 @@ body.sidebar-resizing {
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 6px;
+  transition: background 0.15s;
+}
+.sidebar-detail-title:hover {
+  background: rgba(128, 128, 128, 0.1);
 }
 
 .article-list {
@@ -512,16 +519,14 @@ body.sidebar-resizing {
 
 /* ─── Sidebar search ─── */
 .sidebar-search-wrap {
-  display: flex;
-  align-items: center;
+  position: relative;
   padding: 4px 12px 8px;
-  gap: 4px;
   flex-shrink: 0;
 }
 .sidebar-search {
-  flex: 1;
-  min-width: 0;
-  padding: 6px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 28px 6px 10px;
   font-size: 13px;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -538,18 +543,21 @@ body.sidebar-resizing {
   color: var(--text-tertiary);
 }
 .sidebar-search-clear {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   background: transparent;
   color: var(--text-tertiary);
   cursor: pointer;
-  flex-shrink: 0;
 }
 .sidebar-search-clear:hover {
   background: rgba(128, 128, 128, 0.1);
