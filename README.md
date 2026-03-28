@@ -8,7 +8,7 @@ AI chat apps are poor at displaying long-form research — output gets buried in
 
 1. Open the GitHub Pages URL (or serve locally: `python3 -m http.server -b 127.0.0.1 3000`)
 2. Click the **+** button in the sidebar toolbar to import `.md` files
-3. Articles are stored in your browser's localStorage
+3. Articles are stored in your browser (IndexedDB, with localStorage fallback)
 
 No npm, no build step, no server dependencies.
 
@@ -46,7 +46,7 @@ Click an article in the sidebar. Use the trash icon to delete articles you no lo
 - **URL routing** — `#article-name/heading-N` format, shareable heading links
 - **YAML front matter** — stripped automatically before rendering
 - **Article import/delete** — import `.md` files via file picker, delete with trash button
-- **localStorage storage** — all articles stored client-side, no server needed
+- **IndexedDB storage** — articles stored in IndexedDB for large capacity; automatic migration from localStorage; transparent fallback if IndexedDB unavailable
 - **Responsive layout** — mobile/tablet with collapsible sidebar overlay
 - **Zero build step** — static files, works on GitHub Pages, no npm, no bundler
 
@@ -66,7 +66,7 @@ Libraries in `lib/` for zero-dependency, offline use.
 ```
 index.html                      — SPA shell
 style.css                       — light/dark theme, sidebar, layout
-lib/app.js                      — all logic: loader, renderer, TOC, scroll-spy, localStorage storage
+lib/app.js                      — all logic: loader, renderer, TOC, scroll-spy, IndexedDB/localStorage storage
 lib/marked.min.js               — markdown parser (v4.3.0)
 lib/highlight.min.js            — syntax highlighting (v11.11.1)
 lib/mermaid.min.js              — diagram rendering (v11.13.0)
@@ -79,4 +79,4 @@ prompts/
 
 ## Storage
 
-Articles are stored entirely in the browser's `localStorage`. Each article is saved under the key `article:{slug}` and the slug list under `articleSlugs`. No files are read from the server filesystem — the app works as a fully static site on GitHub Pages.
+Articles are stored in the browser's **IndexedDB** (`aiResearchReader` database) for larger capacity than localStorage. On first load, any existing localStorage articles are automatically migrated. If IndexedDB is unavailable (e.g., Firefox private browsing), the app falls back to localStorage transparently. Settings (theme, sidebar state, reading progress) remain in localStorage. No files are read from the server filesystem — the app works as a fully static site on GitHub Pages.
