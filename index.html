@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Research Reader</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=15">
   <link rel="stylesheet" href="lib/highlight-github.css">
 </head>
 <body>
@@ -44,15 +44,18 @@
         </svg>
       </button>
     </div>
+    <div class="sidebar-search-wrap" id="searchWrap" hidden>
+      <input type="text" class="sidebar-search" id="sidebarSearch" placeholder="Search…">
+      <button class="sidebar-search-clear" id="searchClear" aria-label="Clear search">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg>
+      </button>
+    </div>
     <div class="sidebar-panels" id="sidebarPanels">
       <div class="sidebar-screen" id="screenList">
         <div class="sidebar-header"><h2>Articles</h2></div>
         <ul class="article-list"></ul>
       </div>
       <div class="sidebar-screen" id="screenDetail">
-        <div class="sidebar-search-wrap" id="searchWrap" hidden>
-          <input type="text" class="sidebar-search" id="sidebarSearch" placeholder="Search in article…">
-        </div>
         <div class="sidebar-detail-header">
           <button class="sidebar-back" id="sidebarBack" aria-label="Back to articles">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -60,7 +63,6 @@
             </svg>
           </button>
           <span class="sidebar-detail-title" id="detailTitle"></span>
-          <button class="sidebar-open-btn" id="openArticle" aria-label="Scroll to article start">Open</button>
         </div>
         <div class="toc-section">
           <ul id="toc"></ul>
@@ -78,7 +80,7 @@
 <script src="lib/marked.min.js"></script>
 <script src="lib/highlight.min.js"></script>
 <script src="lib/mermaid.min.js"></script>
-<script src="lib/app.js?v=13"></script>
+<script src="lib/app.js?v=15"></script>
 
 </body>
 </html>

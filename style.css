@@ -512,11 +512,15 @@ body.sidebar-resizing {
 
 /* ─── Sidebar search ─── */
 .sidebar-search-wrap {
+  display: flex;
+  align-items: center;
   padding: 4px 12px 8px;
+  gap: 4px;
   flex-shrink: 0;
 }
 .sidebar-search {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   padding: 6px 10px;
   font-size: 13px;
   border: 1px solid var(--border);
@@ -533,34 +537,34 @@ body.sidebar-resizing {
 .sidebar-search::placeholder {
   color: var(--text-tertiary);
 }
-
-/* ─── Open article button ─── */
-.sidebar-open-btn {
-  margin-left: auto;
-  padding: 2px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: transparent;
-  color: var(--accent);
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.15s;
-  font-family: inherit;
-}
-.sidebar-open-btn:hover {
-  background: var(--accent-subtle);
-  border-color: var(--accent);
-}
-
-/* ─── Article list chevron ─── */
-.article-list li a {
+.sidebar-search-clear {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  flex-shrink: 0;
 }
-.article-list li a span { flex: 1; min-width: 0; }
+.sidebar-search-clear:hover {
+  background: rgba(128, 128, 128, 0.1);
+  color: var(--text-secondary);
+}
+
+/* ─── Article list layout ─── */
+.article-list li a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 8px;
+}
+.article-list li a .article-title { flex: 1; min-width: 0; }
+.article-list li.search-hidden { display: none; }
 .article-chevron {
   flex-shrink: 0;
   color: var(--text-tertiary);
@@ -570,12 +574,13 @@ body.sidebar-resizing {
 .article-list li a:hover .article-chevron { opacity: 1; }
 .article-list li a.active .article-chevron { color: var(--accent); opacity: 0.7; }
 
-/* ─── Article progress bar ─── */
+/* ─── Article progress bar (inside <a>) ─── */
 .article-progress {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 2px 12px 0;
+  gap: 6px;
+  width: 100%;
+  margin-top: 4px;
 }
 .article-progress-track {
   flex: 1;
@@ -597,6 +602,9 @@ body.sidebar-resizing {
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
 }
+
+/* ─── TOC search: hide non-matching ─── */
+#toc li.toc-search-hidden { display: none; }
 
 /* ─── TOC search results ─── */
 .toc-search-result {
